@@ -7,6 +7,7 @@ package development;
 
 import java.util.Collections;
 import java.util.List;
+import visitor.FigureVisitor;
 
 /**
  *
@@ -23,5 +24,10 @@ public class Drawing extends Figure {
 
     public List<Figure> getComponents() {
         return Collections.unmodifiableList(components);
+    }
+    
+    @Override
+    public void accept(FigureVisitor figureVisitor) {
+        figureVisitor.visit(this);
     }
 }

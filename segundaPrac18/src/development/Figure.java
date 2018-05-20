@@ -5,6 +5,8 @@
  */
 package development;
 
+import visitor.FigureVisitor;
+
 /**
  *
  * @author srblimp
@@ -25,5 +27,7 @@ public abstract class Figure {
     public double getY() {
         return y;
     }
+    
+    public abstract void accept(FigureVisitor figureVisitor);
     
 }

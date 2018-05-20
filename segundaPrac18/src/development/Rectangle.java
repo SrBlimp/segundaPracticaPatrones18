@@ -5,6 +5,8 @@
  */
 package development;
 
+import visitor.FigureVisitor;
+
 /**
  *
  * @author srblimp
@@ -27,4 +29,8 @@ public class Rectangle extends Figure {
         return height;
     }
     
+    @Override
+    public void accept(FigureVisitor figureVisitor) {
+        figureVisitor.visit(this);
+    }
 }

@@ -5,6 +5,8 @@
  */
 package development;
 
+import visitor.FigureVisitor;
+
 /**
  *
  * @author srblimp
@@ -19,6 +21,11 @@ public class Circle extends Figure {
 
     public double getR() {
         return r;
+    }
+    
+    @Override
+    public void accept(FigureVisitor figureVisitor) {
+        figureVisitor.visit(this);
     }
     
 }
