@@ -1,0 +1,1 @@
+Aplicaría el patrón 'Builder' (Constructor), el cual nos permite mover la lógica de construcción de un objeto A a un objeto B fuera de la clase y poder construir el objeto A a medida que se tiene la información.
