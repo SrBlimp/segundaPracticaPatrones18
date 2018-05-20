@@ -1,0 +1,1 @@
+Aplicaría el patrón 'Visitor' (Visitante) ya que nos permite poder aplicar las operaciones de una jerarquía de clases sin necesidad de exportar la estructura.
