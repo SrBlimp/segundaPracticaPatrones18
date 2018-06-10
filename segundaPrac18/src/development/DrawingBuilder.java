@@ -13,9 +13,9 @@ import java.util.List;
  * @author srblimp
  */
 public class DrawingBuilder {
-    private double x;
-    private double y;
-    private List<Figure> components;
+    private final double x;
+    private final double y;
+    private final List<Figure> components;
     
     public DrawingBuilder(double x, double y) {
         this.x = x;

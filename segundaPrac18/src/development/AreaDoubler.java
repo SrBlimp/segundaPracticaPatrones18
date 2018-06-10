@@ -13,7 +13,7 @@ import visitor.FigureVisitor;
  */
 public class AreaDoubler implements FigureVisitor {
 
-    private static double MATH_SQRT = Math.sqrt(2.0);
+    private static final double MATH_SQRT = Math.sqrt(2.0);
     private Figure figure;
 
     public Figure getFigure() {
@@ -34,7 +34,8 @@ public class AreaDoubler implements FigureVisitor {
     public void visit(Drawing drawing) {
         DrawingBuilder drawingBuilder = new DrawingBuilder(drawing.getX(), drawing.getY());
         for (Figure fig: drawing.getComponents()) {
-            fig.accept(this);
+            AreaDoubler areaDoubler = new AreaDoubler();
+            fig.accept(areaDoubler);
             drawingBuilder.add(this.getFigure());
         }
         figure = drawingBuilder.build();
