@@ -15,12 +15,11 @@ import java.util.List;
 public class DrawingBuilder {
     private final double x;
     private final double y;
-    private final List<Figure> components;
+    private final List<Figure> components = new ArrayList<>();
     
     public DrawingBuilder(double x, double y) {
         this.x = x;
         this.y = y;
-        components = new ArrayList<>();
     }
     
     public DrawingBuilder add(Figure figure) {

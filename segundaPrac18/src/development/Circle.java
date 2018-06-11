@@ -12,7 +12,7 @@ import visitor.FigureVisitor;
  * @author srblimp
  */
 public class Circle extends Figure {
-    private double r;
+    private final double r;
     
     public Circle(double x, double y, double r) {
         super(x, y);
@@ -26,6 +26,17 @@ public class Circle extends Figure {
     @Override
     public void accept(FigureVisitor figureVisitor) {
         figureVisitor.visit(this);
+    }
+    
+    @Override
+    public boolean equals(Object o) 
+    {
+        if (!(o instanceof Circle)) 
+        {
+            return false;
+        }
+        Circle circle = (Circle) o;
+        return super.equals(o) && r == circle.getR();
     }
     
 }

@@ -12,8 +12,8 @@ import visitor.FigureVisitor;
  * @author srblimp
  */
 public abstract class Figure {
-    private double x;
-    private double y;
+    private final double x;
+    private final double y;
 
     public Figure(double x, double y) {
         this.x = x;
@@ -29,5 +29,16 @@ public abstract class Figure {
     }
     
     public abstract void accept(FigureVisitor figureVisitor);
+    
+    @Override
+    public boolean equals(Object o) 
+    {
+        if (!(o instanceof Figure)) 
+        {
+            return false;
+        }
+        Figure figure = (Figure) o;
+        return x == figure.getX() && y == figure.getY();
+    }
     
 }

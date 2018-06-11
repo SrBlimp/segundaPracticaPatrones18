@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package development;
 
 import visitor.FigureVisitor;
@@ -31,13 +26,15 @@ public class AreaDoubler implements FigureVisitor {
     }
 
     @Override
-    public void visit(Drawing drawing) {
+    public void visit(Drawing drawing) 
+    {
         DrawingBuilder drawingBuilder = new DrawingBuilder(drawing.getX(), drawing.getY());
-        for (Figure fig: drawing.getComponents()) {
+        for (Figure fig: drawing.getComponents()) 
+        {
             AreaDoubler areaDoubler = new AreaDoubler();
-            fig.accept(areaDoubler);
-            drawingBuilder.add(this.getFigure());
+            fig.accept(this);
+            drawingBuilder.add(getFigure());
         }
         figure = drawingBuilder.build();
-    } 
+    }
 }

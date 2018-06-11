@@ -13,9 +13,10 @@ import visitor.FigureVisitor;
  *
  * @author srblimp
  */
-public class Drawing extends Figure {
+public class Drawing extends Figure 
+{
     
-    private List<Figure> components;
+    private final  List<Figure> components;
     
     public Drawing(double x, double y, List<Figure> components) {
         super(x,y);
@@ -29,5 +30,16 @@ public class Drawing extends Figure {
     @Override
     public void accept(FigureVisitor figureVisitor) {
         figureVisitor.visit(this);
+    }
+    
+    @Override
+    public boolean equals(Object o) 
+    {
+        if (!(o instanceof Drawing)) 
+        {
+            return false;
+        }
+        Drawing drawing = (Drawing) o;
+        return super.equals(o) && components.equals(drawing.getComponents());
     }
 }

@@ -12,8 +12,8 @@ import visitor.FigureVisitor;
  * @author srblimp
  */
 public class Rectangle extends Figure {
-    private double width;
-    private double height;
+    private final double width;
+    private final double height;
     
     public Rectangle(double x, double y, double width, double height) {
         super(x, y);
@@ -32,5 +32,16 @@ public class Rectangle extends Figure {
     @Override
     public void accept(FigureVisitor figureVisitor) {
         figureVisitor.visit(this);
+    }
+    
+    @Override
+    public boolean equals(Object o) 
+    {
+        if (!(o instanceof Rectangle)) 
+        {
+            return false;
+        }
+        Rectangle rectangle = (Rectangle) o;
+        return super.equals(o) && width == rectangle.getWidth() && height == rectangle.getHeight();
     }
 }
