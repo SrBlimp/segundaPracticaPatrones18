@@ -1,1 +1,1 @@
-No las podemos subir a la clase Figure ya que en cada clase el 'this' se esta refiriendo a una cosa distinta. Además, no lo podemos subir ya que sino el compilador no podrá distingir si queremos un 'Circle', un 'Rectangle' o un 'Drawing'.
+No las podemos subir a la clase Figure ya que en cada clase el 'this' se esta refiriendo a una cosa distinta. Además, no lo podemos subir ya que sino el compilador no podrá distinguir si queremos un 'Circle', un 'Rectangle' o un 'Drawing'.
