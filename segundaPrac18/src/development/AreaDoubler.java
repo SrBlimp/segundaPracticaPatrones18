@@ -32,8 +32,8 @@ public class AreaDoubler implements FigureVisitor {
         for (Figure fig: drawing.getComponents()) 
         {
             AreaDoubler areaDoubler = new AreaDoubler();
-            fig.accept(this);
-            drawingBuilder.add(getFigure());
+            fig.accept(areaDoubler);
+            drawingBuilder.add(areaDoubler.getFigure());
         }
         figure = drawingBuilder.build();
     }
